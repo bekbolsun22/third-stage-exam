@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 
-const Character = ({ image, name, gender, status, episodesCount = 0 }) => {
+const CharacterItem = ({ image, name, gender, status }) => {
    return (
       <Card sx={{ width: 250 }}>
          <CardMedia sx={{ height: 200 }} image={image} />
@@ -24,11 +24,11 @@ const Character = ({ image, name, gender, status, episodesCount = 0 }) => {
                Status: {status}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-               Episodes: {episodesCount}
+               Episodes: ???
             </Typography>
          </CardContent>
       </Card>
    )
 }
 
-export default Character
+export default CharacterItem

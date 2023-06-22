@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box, styled } from '@mui/material'
-import Character from './Character'
+import CharacterItem from './CharacterItem'
 
 const CharactersList = ({ characters = [] }) => {
    return (
       <StyledBox>
          {characters.map((character) => {
             // here you need to pass necessary props to the <Character />
-            return <Character {...character} key={character.id} />
+            return <CharacterItem {...character} key={character.id} />
          })}
       </StyledBox>
    )

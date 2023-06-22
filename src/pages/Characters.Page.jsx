@@ -1,39 +1,38 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect, useState } from 'react'
-import {
-   Box,
-   Button,
-   Container,
-   FormControl,
-   FormControlLabel,
-   FormLabel,
-   Radio,
-   RadioGroup,
-   styled,
-   TextField,
-   Typography,
-} from '@mui/material'
-import axios from 'axios'
-import { GENDER_VALUES } from '../utils/constants/general'
+import React from 'react'
+import { Container, styled } from '@mui/material'
 import CharactersList from '../components/CharactersList'
 import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
 import Pagination from '../components/Pagination'
 import LoadingSpinner from '../components/UI/LoadingSpinner'
+import EmptyIcon from '../components/UI/EmptyIcon'
+// import { useDebounce } from 'use-debounce'
+// import { SEARCH_PARAMS } from '../utils/constants/general'
+
+// How to use hook "useDebounce"?
+// const [debouncedValue] = useDebounce(value, 1000)
+
+// How to use hook "useSearchParams"?
+// const [searchParams, setSearchParams] = useSearchParams()
+// searchParams.set("key", value) || searchParams.delete("key") || searchParams.get("key")
+// setSearchParams(searchParams)
 
 const CharactersPage = () => {
    return (
       <StyledContainer>
          <header>
-            {/* FOR SEARCHING */}
+            {/* FOR SEARCH */}
             <SearchBar />
-            {/* FOR FILTERING */}
+            {/* FOR FILTER */}
             <FilterBar />
          </header>
          <main style={{ minHeight: '100%' }}>
+            {/* Show loading spinner when fetching data */}
             <LoadingSpinner />
-            <CharactersList characters={[]} />
+            {/* Show "EmptyIcon" if data is empty */}
+            <EmptyIcon />
+            {/* Render "CharactersList" if data is not empty */}
+            <CharactersList />
             <Pagination />
          </main>
       </StyledContainer>

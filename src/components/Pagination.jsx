@@ -1,17 +1,27 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React from 'react'
 import { Box, Button, styled, Typography } from '@mui/material'
 
-const Pagination = () => {
-   const [pageIndex, setPageIndex] = useState(1)
-
+const Pagination = ({ info, isLoading }) => {
    return (
       <PaginationBox>
-         <Button variant="outlined">Prev</Button>
+         <Button
+            variant="outlined"
+            // disabled={!'when?'}
+            // onClick={}
+         >
+            Prev
+         </Button>
          <Typography variant="h6" color="blue">
-            {pageIndex}
+            Номер страницы?
          </Typography>
-         <Button variant="outlined">Next</Button>
+         <Button
+            variant="outlined"
+            // disabled={!'when'}
+            // onClick={}
+         >
+            Next
+         </Button>
       </PaginationBox>
    )
 }
